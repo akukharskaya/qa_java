@@ -1,36 +1,34 @@
 package com.example;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
+    @Mock
     private Feline feline;
-    private Cat cat;
-
-    @Before
-    public void init() {
-        MockitoAnnotations.openMocks(this);
-         feline = Mockito.mock(Feline.class);
-         cat = new Cat(feline);
-    }
 
     @Test
     public void getSound() {
-       assertThat(cat.getSound()).isEqualTo("Мяу");
+        Cat cat = new Cat(feline);
+        assertThat(cat.getSound()).isEqualTo("Мяу");
     }
 
-//    @Test
-//    public void getFood() {
-//        assertThat(true).isFalse();
-//    }
+    @Test
+    public void getFood() throws Exception {
+        Cat cat = new Cat(feline);
+
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        when(feline.eatMeat()).thenReturn(expected);
+        assertThat(cat.getFood()).isEqualTo(expected);
+    }
 
 
 }

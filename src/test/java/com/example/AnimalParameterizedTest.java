@@ -3,16 +3,17 @@ package com.example;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(Parameterized.class)
-public class AnimalParametrizedTest {
+public class AnimalParameterizedTest {
     private final String animalKind;
     private final List<String> expected;
 
-    public AnimalParametrizedTest(String animalKind,List<String> expected) {
+    public AnimalParameterizedTest(String animalKind, List<String> expected) {
         this.animalKind = animalKind;
         this.expected = expected;
     }
