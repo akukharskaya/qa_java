@@ -29,9 +29,8 @@ public class AnimalParameterizedTest {
     @Test
     public void getFood() throws Exception {
         Animal animal = new Animal();
-        List<String> list = animal.getFood(animalKind);
-        int actual = list.size();
+        List<String> actual = animal.getFood(animalKind);
 
-        assertThat(actual).isEqualTo(expected.size());
+        assertThat(actual).isEqualTo(expected);
     }
 }

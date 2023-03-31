@@ -17,8 +17,8 @@ public class FelineTest {
 
     @Test
     public void eatMeat() throws Exception {
-        List<String> list = feline.eatMeat();
-        assertThat(list.size()).isEqualTo(3);
+        List<String> foods = feline.eatMeat();
+        assertThat(foods).isEqualTo(List.of("Животные", "Птицы", "Рыба"));
     }
 
     @Test
